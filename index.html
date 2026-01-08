@@ -1,45 +1,49 @@
-{% extends "layout.html" %} 
-{% block title %}Home Page{% endblock %}
-
-{% block content %}
-<div>
-  <h1 class="display-4 text-center"><b>Ecommerce Website</b></h1>
-  
-  <div class="container">
-    <div class="row">
-      {% for product in products %}
-      <div class="col-12 col-md-6 col-lg-4 col-xl-3 my-2">
-        <div class="card shadow-lg p-2">
-          
-          <h5>{{ product.name }}</h5>
-          <p>{{ product.product }}</p>
-          <p>Price: ₹{{ product.price }}</p>
-          
-          <img class="my-3 rounded" src="{{ product.image}}" alt="{{ product.name }}" style="height:300px;width: 300px; object-fit:cover" />
-
-          <div class="d-flex gap-3">
-            <button class="btn btn-primary">Show Details</button>
-            <button class="btn btn-warning">Buy Now</button>
-          </div>
-
-        </div>
+{% extends "layout.html" %} {% block content %}
+{% load static %}
+<div class="pt-5 pb-4 bg-warning-subtle">
+  <h1 class="text-center fw-bolder" style="font-size: 4.5vw">
+    PREMIUM CAR <br />RENTAL
+  </h1>
+</div>
+<div class="bg-warning-subtle px- pb-3 gap-5">
+  <div class="d-flex gap- ps-5 mb-2">
+    <button class="btn btn-light btn-lg shadow-sm">Cars</button>
+    <button class="btn btn-light btn-lg shadow-sm">Vans</button>
+  </div>
+  <div class="p-3 bg-light rounded-3 mx-5 shadow-lg">
+    <form class="d-flex align-items-center justify-content-evenly">
+      <div class="form-floating">
+        <input
+          type="email"
+          class="form-control"
+          id="floatingInput"
+          placeholder="pune, mumbai"
+        />
+        <label for="floatingInput">Pick Up and Return Location</label>
       </div>
-      {% endfor %}
-    </div>
+      <div class="form-floating">
+        <input
+          type="password"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="5th Dec"
+        />
+        <label for="floatingPassword">Start</label>
+      </div>
+      <div class="form-floating">
+        <input
+          type="password"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="7th Dec"
+        />
+        <label for="floatingPassword">Stop</label>
+      </div>
+      <button class="btn btn-dark btn-lg ms-3">
+        <i class="ri-search-line"></i>
+      </button>
+    </form>
   </div>
 </div>
+
 {% endblock %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
